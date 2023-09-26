@@ -243,3 +243,67 @@ export async function slayedBeast({ block, tx, event, mysql }: Parameters<Checkp
   // table names are `lowercase(TypeName)s` and can be interacted with sql
   await mysql.queryAsync('INSERT IGNORE INTO slayedbeasts SET ?', [slayedBeastData]);
 }
+
+export async function rewardDistribution({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+  console.log(event.data);
+  const first_place_adventurer_id = BigInt(event.data[0]);
+  const first_place_no_message = BigInt(event.data[1]);
+  const first_place_rank = BigInt(event.data[2]);
+  const first_place_amount = BigInt(event.data[3]);
+  const first_place_no_message_2 = BigInt(event.data[4]);
+  const first_place_address = toAddress(event.data[5]);
+  const second_place_adventurer_id = BigInt(event.data[6]);
+  const second_place_no_message = BigInt(event.data[7]);
+  const second_place_rank = BigInt(event.data[8]);
+  const second_place_amount = BigInt(event.data[9]);
+  const second_place_no_message_2 = BigInt(event.data[10]);
+  const second_place_address = toAddress(event.data[11]);
+  const third_place_adventurer_id = BigInt(event.data[12]);
+  const third_place_no_message = BigInt(event.data[13]);
+  const third_place_rank = BigInt(event.data[14]);
+  const third_place_amount = BigInt(event.data[15]);
+  const third_place_no_message_2 = BigInt(event.data[16]);
+  const third_place_address = toAddress(event.data[17]);
+  const client_amount = BigInt(event.data[18]);
+  const client_no_message = BigInt(event.data[19]);
+  const client_address = toAddress(event.data[20]);
+  const dao = BigInt(event.data[21]);
+  const no_message = BigInt(event.data[22]);
+  const timestamp = block.timestamp;
+  const blockNumber = block.block_number;
+
+  const rewardDistribution = {
+    id: `${first_place_address}/${tx.transaction_hash}`,
+    first_place_adventurer_id: first_place_adventurer_id,
+    first_place_no_message: first_place_no_message,
+    first_place_rank: first_place_rank,
+    first_place_amount: first_place_amount,
+    first_place_no_message_2: first_place_no_message_2,
+    first_place_address: first_place_address,
+    second_place_adventurer_id: second_place_adventurer_id,
+    second_place_no_message: second_place_no_message,
+    second_place_rank: second_place_rank,
+    second_place_amount: second_place_amount,
+    second_place_no_message_2: second_place_no_message_2,
+    second_place_address: second_place_address,
+    third_place_adventurer_id: third_place_adventurer_id,
+    third_place_no_message: third_place_no_message,
+    third_place_rank: third_place_rank,
+    third_place_amount: third_place_amount,
+    third_place_no_message_2: third_place_no_message_2,
+    third_place_address: third_place_address,
+    client_amount: client_amount,
+    client_no_message: client_no_message,
+    client_address: client_address,
+    dao: dao,
+    no_message: no_message,
+
+    tx_hash: tx.transaction_hash,
+    created_at: timestamp,
+    created_at_block: blockNumber
+  };
+
+  // table names are `lowercase(TypeName)s` and can be interacted with sql
+  await mysql.queryAsync('INSERT IGNORE INTO rewarddistributions SET ?', [rewardDistribution]);
+}

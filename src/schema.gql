@@ -112,3 +112,33 @@ type SlayedBeast {
   created_at: Int!
   created_at_block: Int!
 }
+
+type RewardDistribution {
+  id: String!
+  first_place_adventurer_id: Int!
+  first_place_no_message: Int!
+  first_place_rank: Int!
+  first_place_amount: Int!
+  first_place_no_message_2: Int!
+  first_place_address: String!
+  second_place_adventurer_id: Int!
+  second_place_no_message: Int!
+  second_place_rank: Int!
+  second_place_amount: Int!
+  second_place_no_message_2: Int!
+  second_place_address: String!
+  third_place_adventurer_id: Int!
+  third_place_no_message: Int!
+  third_place_rank: Int!
+  third_place_amount: Int!
+  third_place_no_message_2: Int!
+  third_place_address: String!
+  client_amount: Int!
+  client_no_message: Int!
+  client_address: String!
+  dao: Int!
+  no_message: Int!
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
