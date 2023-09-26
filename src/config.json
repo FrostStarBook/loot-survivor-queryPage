@@ -13,10 +13,14 @@
         {
           "name": "SlayedBeast",
           "fn": "slayedBeast"
-        },     
+        },
         {
           "name": "RewardDistribution",
           "fn": "rewardDistribution"
+        },
+        {
+          "name": "AdventurerLeveledUp",
+          "fn": "adventurerLeveledUp"
         }
       ]
     }
