@@ -1,14 +1,14 @@
 {
-  "network_node_url": "https://starknet-goerli.infura.io/v3/46a5dd9727bf48d4a132672d3f376146",
+  "network_node_url": "https://starknet-goerli.infura.io/v3/89d267bf72f346b78cf8a86415c6008a",
   "sources": [
     {
-      "contract": "0x04d10712e72b971262f5df09506bbdbdd7f729724030fa909e8c8e7ac2fd0012",
-      "start": 185778,
-      "deploy_fn": "handleDeploy",
+      "contract": "0x0432b7f75ee336a6c297df710d567e02242e4dfe7efa51f213af63e28f362582",
+      "start": 870442,
+      "deploy_fn": "start_game",
       "events": [
         {
-          "name": "new_post",
-          "fn": "handleNewPost"
+          "name": "StartGame",
+          "fn": "startGame"
         }
       ]
     }
