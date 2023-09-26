@@ -21,6 +21,10 @@
         {
           "name": "AdventurerLeveledUp",
           "fn": "adventurerLeveledUp"
+        },
+        {
+          "name": "UpgradesAvailable",
+          "fn": "upgradesAvailable"
         }
       ]
     }

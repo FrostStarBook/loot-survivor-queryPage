@@ -6,7 +6,7 @@ To-do list
 - Integrate checkPoint and collect data ✅
 - Collect data through full event listening
     - [x] StartGame: StartGame,
-    - [ ] UpgradesAvailable: UpgradesAvailable,
+    - [x] UpgradesAvailable: UpgradesAvailable,
     - [ ] DiscoveredHealth: DiscoveredHealth,
     - [ ] DiscoveredGold: DiscoveredGold,
     - [ ] DodgedObstacle: DodgedObstacle,
