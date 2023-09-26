@@ -51,3 +51,64 @@ type StartGame {
   created_at: Int!
   created_at_block: Int!
 }
+
+type SlayedBeast {
+  id: String!
+  owner: String!
+  adventurer_id: Int!
+  no_message: Int!
+  last_action: Int!
+  health: Int!
+  xp: Int!
+  strength: Int!
+  dexterity: Int!
+  vitality: Int!
+  intelligence: Int!
+  wisdom: Int!
+  charisma: Int!
+  luck: Int!
+  gold: Int!
+  weapon_id: Int!
+  weapon_xp: Int!
+  weapon_metadata: Int!
+  chest_id: Int!
+  chest_xp: Int!
+  chest_metadata: Int!
+  head_id: Int!
+  head_xp: Int!
+  head_metadata: Int!
+  waist_id: Int!
+  waist_xp: Int!
+  waist_metadata: Int!
+  foot_id: Int!
+  foot_xp: Int!
+  foot_metadata: Int!
+  hand_id: Int!
+  hand_xp: Int!
+  hand_metadata: Int!
+  neck_id: Int!
+  neck_xp: Int!
+  neck_metadata: Int!
+  ring_id: Int!
+  ring_xp: Int!
+  ring_metadata: Int!
+  beast_health: Int!
+  stat_points_available: Int!
+  mutated: Int!
+  seed: Int!
+  slayed_beast_id: Int!
+  tier: Int!
+  item_type: Int!
+  level: Int!
+  special1: Int!
+  special2: Int!
+  special3: Int!
+  damage_dealt: Int!
+  critical_hit: Int!
+  xp_earned_adventurer: Int!
+  xp_earned_items: Int!
+  gold_earned: Int!
+  tx_hash: String!
+  created_at: Int!
+  created_at_block: Int!
+}
