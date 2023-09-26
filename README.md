@@ -5,6 +5,30 @@ Use checkPoint to collect data, provide multidimensional data query for adventur
 To-do list
 - Integrate checkPoint and collect data ✅
 - Collect data through full event listening
+    - [x] StartGame: StartGame,
+    - [ ] UpgradesAvailable: UpgradesAvailable,
+    - [ ] DiscoveredHealth: DiscoveredHealth,
+    - [ ] DiscoveredGold: DiscoveredGold,
+    - [ ] DodgedObstacle: DodgedObstacle,
+    - [ ] HitByObstacle: HitByObstacle,
+    - [ ] AmbushedByBeast: AmbushedByBeast,
+    - [ ] DiscoveredBeast: DiscoveredBeast,
+    - [ ] AttackedBeast: AttackedBeast,
+    - [ ] AttackedByBeast: AttackedByBeast,
+    - [x] SlayedBeast: SlayedBeast,
+    - [ ] FleeFailed: FleeFailed,
+    - [ ] FleeSucceeded: FleeSucceeded,
+    - [x] AdventurerLeveledUp: AdventurerLeveledUp,
+    - [ ] PurchasedItems: PurchasedItems,
+    - [ ] PurchasedPotions: PurchasedPotions,
+    - [ ] AdventurerUpgraded: AdventurerUpgraded,
+    - [ ] EquippedItems: EquippedItems,
+    - [ ] DroppedItems: DroppedItems,
+    - [ ] ItemsLeveledUp: ItemsLeveledUp,
+    - [ ] AdventurerDied: AdventurerDied,
+    - [ ] NewHighScore: NewHighScore,
+    - [ ] IdleDeathPenalty: IdleDeathPenalty,
+    - [x] RewardDistribution: RewardDistribution
 - Total number of adventurers (total alive, total dead)
 - Number of plays from the same address
 - Specified adventurer's gameplay path

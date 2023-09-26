@@ -144,7 +144,7 @@ type RewardDistribution {
 }
 
 type AdventurerLeveledUp {
-    id: String!
+  id: String!
   owner: String!
   adventurer_id: Int!
   no_message: Int!
@@ -186,9 +186,9 @@ type AdventurerLeveledUp {
   beast_health: Int!
   stat_points_available: Int!
   mutated: Int!
-  previous_level:Int!
-  new_level:Int!
-    tx_hash: String!
+  previous_level: Int!
+  new_level: Int!
+  tx_hash: String!
   created_at: Int!
   created_at_block: Int!
 }
