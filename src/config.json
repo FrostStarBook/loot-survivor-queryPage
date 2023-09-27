@@ -29,6 +29,10 @@
         {
           "name": "DiscoveredHealth",
           "fn": "discoveredHealth"
+        },
+        {
+          "name": "DiscoveredGold",
+          "fn": "discoveredGold"
         }
       ]
     }

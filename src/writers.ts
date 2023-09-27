@@ -278,3 +278,23 @@ export async function discoveredHealth({
     console.error(`Error inserting into database discoveredhealths: ${error}`);
   }
 }
+
+export async function discoveredGold({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const timestamp = block.timestamp;
+  const blockNumber = block.block_number;
+
+  const discoveredGold = createCharacterData(event.data, {
+    amount: BigInt(event.data[41]),
+    tx_hash: tx.transaction_hash,
+    created_at: timestamp,
+    created_at_block: blockNumber
+  });
+
+  try {
+    await insertIntoDatabase('discoveredgolds', discoveredGold, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database discoveredgolds: ${error}`);
+  }
+}

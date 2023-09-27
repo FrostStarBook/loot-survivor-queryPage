@@ -7,8 +7,8 @@ To-do list
 - Collect data through full event listening
     - [x] StartGame: StartGame,
     - [x] UpgradesAvailable: UpgradesAvailable,
-    - [ ] DiscoveredHealth: DiscoveredHealth,
-    - [ ] DiscoveredGold: DiscoveredGold,
+    - [x] DiscoveredHealth: DiscoveredHealth,
+    - [x] DiscoveredGold: DiscoveredGold,
     - [ ] DodgedObstacle: DodgedObstacle,
     - [ ] HitByObstacle: HitByObstacle,
     - [ ] AmbushedByBeast: AmbushedByBeast,
