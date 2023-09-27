@@ -12,7 +12,7 @@ To-do list
     - [x] DodgedObstacle: DodgedObstacle,
     - [x] HitByObstacle: HitByObstacle,
     - [x] AmbushedByBeast: AmbushedByBeast,
-    - [ ] DiscoveredBeast: DiscoveredBeast,
+    - [x] DiscoveredBeast: DiscoveredBeast,
     - [ ] AttackedBeast: AttackedBeast,
     - [ ] AttackedByBeast: AttackedByBeast,
     - [x] SlayedBeast: SlayedBeast,

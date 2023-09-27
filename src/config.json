@@ -45,6 +45,10 @@
         {
           "name": "AmbushedByBeast",
           "fn": "ambushedByBeast"
+        },
+        {
+          "name": "DiscoveredBeast",
+          "fn": "discoveredBeast"
         }
       ]
     }
