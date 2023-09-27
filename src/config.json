@@ -41,6 +41,10 @@
         {
           "name": "HitByObstacle",
           "fn": "hitByObstacle"
+        },
+        {
+          "name": "AmbushedByBeast",
+          "fn": "ambushedByBeast"
         }
       ]
     }

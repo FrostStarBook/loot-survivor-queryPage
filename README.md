@@ -11,7 +11,7 @@ To-do list
     - [x] DiscoveredGold: DiscoveredGold,
     - [x] DodgedObstacle: DodgedObstacle,
     - [x] HitByObstacle: HitByObstacle,
-    - [ ] AmbushedByBeast: AmbushedByBeast,
+    - [x] AmbushedByBeast: AmbushedByBeast,
     - [ ] DiscoveredBeast: DiscoveredBeast,
     - [ ] AttackedBeast: AttackedBeast,
     - [ ] AttackedByBeast: AttackedByBeast,
