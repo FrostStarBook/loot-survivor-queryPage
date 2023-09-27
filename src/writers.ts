@@ -35,6 +35,23 @@ function createDataObject(keys: string[], values: bigint[], tx: any, block: any)
   return dataObject;
 }
 
+function hexToString(hex: string): string {
+  let result = '';
+  let i = 0;
+
+  if (hex.length % 2 !== 0) {
+    throw new Error('Hex string length must be even.');
+  }
+
+  while (i < hex.length) {
+    const byte = parseInt(hex.substr(i, 2), 16);
+    result += String.fromCharCode(byte);
+    i += 2;
+  }
+
+  return result;
+}
+
 function createCharacterData(eventData: any[], additionalData: any = {}): any {
   const characterData = {
     id: uuidv4(),
@@ -89,7 +106,7 @@ export async function startGame({ block, tx, event, mysql }: Parameters<Checkpoi
   if (!event) return;
 
   const additionalData = {
-    name: BigInt(event.data[41]),
+    name: event.data[41],
     home_realm: BigInt(event.data[42]),
     clazz: BigInt(event.data[43]),
     entropy: BigInt(event.data[44]),

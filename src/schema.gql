@@ -43,7 +43,7 @@ type StartGame {
   beast_health: Int!
   stat_points_available: Int!
   mutated: Int!
-  name: Int!
+  name: String!
   home_realm: Int!
   clazz: Int!
   entropy: Int!
