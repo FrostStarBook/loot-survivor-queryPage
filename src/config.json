@@ -49,6 +49,22 @@
         {
           "name": "DiscoveredBeast",
           "fn": "discoveredBeast"
+        },
+        {
+          "name": "AttackedBeast",
+          "fn": "attackedBeast"
+        },
+        {
+          "name": "AttackedByBeast",
+          "fn": "attackedByBeast"
+        },
+        {
+          "name": "FleeFailed",
+          "fn": "fleeFailed"
+        },
+        {
+          "name": "FleeSucceeded",
+          "fn": "fleeSucceeded"
         }
       ]
     }

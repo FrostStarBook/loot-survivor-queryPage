@@ -380,6 +380,7 @@ export async function ambushedByBeast({
     console.error(`Error inserting into database ambushedbybeasts: ${error}`);
   }
 }
+
 export async function discoveredBeast({
   block,
   tx,
@@ -408,5 +409,120 @@ export async function discoveredBeast({
     await insertIntoDatabase('discoveredbeasts', discoveredBeast, mysql);
   } catch (error) {
     console.error(`Error inserting into database discoveredbeasts: ${error}`);
+  }
+}
+
+export async function attackedBeast({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const additionalData = {
+    seed: BigInt(event.data[41]),
+    slayed_beast_id: BigInt(event.data[42]),
+    tier: BigInt(event.data[43]),
+    item_type: BigInt(event.data[44]),
+    level: BigInt(event.data[45]),
+    special1: BigInt(event.data[46]),
+    special2: BigInt(event.data[47]),
+    special3: BigInt(event.data[48]),
+    damage: BigInt(event.data[49]),
+    critical_hit: BigInt(event.data[50]),
+    location: BigInt(event.data[51]),
+    tx_hash: tx.transaction_hash,
+    created_at: block.timestamp,
+    created_at_block: block.block_number
+  };
+
+  const attackedBeast = createCharacterData(event.data, additionalData);
+
+  try {
+    await insertIntoDatabase('attackedbeasts', attackedBeast, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database attackedbeasts: ${error}`);
+  }
+}
+
+export async function attackedByBeast({
+  block,
+  tx,
+  event,
+  mysql
+}: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const additionalData = {
+    seed: BigInt(event.data[41]),
+    slayed_beast_id: BigInt(event.data[42]),
+    tier: BigInt(event.data[43]),
+    item_type: BigInt(event.data[44]),
+    level: BigInt(event.data[45]),
+    special1: BigInt(event.data[46]),
+    special2: BigInt(event.data[47]),
+    special3: BigInt(event.data[48]),
+    damage: BigInt(event.data[49]),
+    critical_hit: BigInt(event.data[50]),
+    location: BigInt(event.data[51]),
+    tx_hash: tx.transaction_hash,
+    created_at: block.timestamp,
+    created_at_block: block.block_number
+  };
+
+  const attackedByBeast = createCharacterData(event.data, additionalData);
+
+  try {
+    await insertIntoDatabase('attackedbybeasts', attackedByBeast, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database attackedbybeasts: ${error}`);
+  }
+}
+
+export async function fleeFailed({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const additionalData = {
+    seed: BigInt(event.data[41]),
+    slayed_beast_id: BigInt(event.data[42]),
+    tier: BigInt(event.data[43]),
+    item_type: BigInt(event.data[44]),
+    level: BigInt(event.data[45]),
+    special1: BigInt(event.data[46]),
+    special2: BigInt(event.data[47]),
+    special3: BigInt(event.data[48]),
+    tx_hash: tx.transaction_hash,
+    created_at: block.timestamp,
+    created_at_block: block.block_number
+  };
+
+  const fleeFailed = createCharacterData(event.data, additionalData);
+
+  try {
+    await insertIntoDatabase('fleefaileds', fleeFailed, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database fleefaileds: ${error}`);
+  }
+}
+
+export async function fleeSucceeded({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const additionalData = {
+    seed: BigInt(event.data[41]),
+    slayed_beast_id: BigInt(event.data[42]),
+    tier: BigInt(event.data[43]),
+    item_type: BigInt(event.data[44]),
+    level: BigInt(event.data[45]),
+    special1: BigInt(event.data[46]),
+    special2: BigInt(event.data[47]),
+    special3: BigInt(event.data[48]),
+    tx_hash: tx.transaction_hash,
+    created_at: block.timestamp,
+    created_at_block: block.block_number
+  };
+
+  const fleeSucceeded = createCharacterData(event.data, additionalData);
+
+  try {
+    await insertIntoDatabase('fleesucceededs', fleeFailed, fleeSucceeded);
+  } catch (error) {
+    console.error(`Error inserting into database fleesucceededs: ${error}`);
   }
 }
