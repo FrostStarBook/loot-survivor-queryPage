@@ -253,3 +253,28 @@ export async function upgradesAvailable({
     console.error(`Error inserting into database upgradesavailables: ${error}`);
   }
 }
+
+export async function discoveredHealth({
+  block,
+  tx,
+  event,
+  mysql
+}: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const timestamp = block.timestamp;
+  const blockNumber = block.block_number;
+
+  const discoveredHealth = createCharacterData(event.data, {
+    amount: BigInt(event.data[41]),
+    tx_hash: tx.transaction_hash,
+    created_at: timestamp,
+    created_at_block: blockNumber
+  });
+
+  try {
+    await insertIntoDatabase('discoveredhealths', discoveredHealth, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database discoveredhealths: ${error}`);
+  }
+}
