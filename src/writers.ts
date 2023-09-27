@@ -298,3 +298,29 @@ export async function discoveredGold({ block, tx, event, mysql }: Parameters<Che
     console.error(`Error inserting into database discoveredgolds: ${error}`);
   }
 }
+
+export async function dodgedObstacle({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const timestamp = block.timestamp;
+  const blockNumber = block.block_number;
+
+  const dodgedObstacle = createCharacterData(event.data, {
+    obstacle_id: BigInt(event.data[41]),
+    obstacle_level: BigInt(event.data[42]),
+    obstacle_damage_taken: BigInt(event.data[43]),
+    obstacle_damage_location: BigInt(event.data[44]),
+    obstacle_critical_hit: BigInt(event.data[45]),
+    obstacle_adventurer_xp_reward: BigInt(event.data[46]),
+    obstacle_item_xp_reward: BigInt(event.data[47]),
+    tx_hash: tx.transaction_hash,
+    created_at: timestamp,
+    created_at_block: blockNumber
+  });
+
+  try {
+    await insertIntoDatabase('dodgedobstacles', dodgedObstacle, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database dodgedobstacles: ${error}`);
+  }
+}

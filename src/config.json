@@ -33,6 +33,10 @@
         {
           "name": "DiscoveredGold",
           "fn": "discoveredGold"
+        },
+        {
+          "name": "DodgedObstacle",
+          "fn": "dodgedObstacle"
         }
       ]
     }
