@@ -19,7 +19,7 @@ To-do list
     - [x] FleeFailed: FleeFailed,
     - [x] FleeSucceeded: FleeSucceeded,
     - [x] AdventurerLeveledUp: AdventurerLeveledUp,
-    - [ ] PurchasedItems: PurchasedItems,
+    - [x] PurchasedItems: PurchasedItems,
     - [ ] PurchasedPotions: PurchasedPotions,
     - [ ] AdventurerUpgraded: AdventurerUpgraded,
     - [ ] EquippedItems: EquippedItems,

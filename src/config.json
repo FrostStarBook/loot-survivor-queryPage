@@ -65,6 +65,10 @@
         {
           "name": "FleeSucceeded",
           "fn": "fleeSucceeded"
+        },
+        {
+          "name": "PurchasedItems",
+          "fn": "purchasedItems"
         }
       ]
     }

@@ -521,8 +521,43 @@ export async function fleeSucceeded({ block, tx, event, mysql }: Parameters<Chec
   const fleeSucceeded = createCharacterData(event.data, additionalData);
 
   try {
-    await insertIntoDatabase('fleesucceededs', fleeFailed, fleeSucceeded);
+    await insertIntoDatabase('fleesucceededs', fleeSucceeded, mysql);
   } catch (error) {
     console.error(`Error inserting into database fleesucceededs: ${error}`);
+  }
+}
+
+export async function purchasedItems({ block, tx, event, mysql }: Parameters<CheckpointWriter>[0]) {
+  if (!event) return;
+
+  const temp_items: bigint[] = [];
+  for (let i = 76; i < event.data.length; i++) {
+    temp_items.push(BigInt(event.data[i]));
+  }
+  const items = temp_items.map(item => item.toString()).join();
+
+  const temp_bag_item_list: bigint[] = [];
+  for (let i = 42; i < 75; i++) {
+    temp_bag_item_list.push(BigInt(event.data[i]));
+  }
+  const bag_item_list = temp_bag_item_list.map(item => item.toString()).join();
+  const timestamp = block.timestamp;
+  const blockNumber = block.block_number;
+
+  const additionalData = createCharacterData(event.data, {
+    bag_item_list: bag_item_list,
+    bag_mutated: BigInt(event.data[75]),
+    items: items,
+    tx_hash: tx.transaction_hash,
+    created_at: timestamp,
+    created_at_block: blockNumber
+  });
+
+  const purchasedItems = createCharacterData(event.data, additionalData);
+
+  try {
+    await insertIntoDatabase('purchaseditemss', purchasedItems, mysql);
+  } catch (error) {
+    console.error(`Error inserting into database purchaseditemss: ${error}`);
   }
 }
