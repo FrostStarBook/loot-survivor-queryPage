@@ -2,8 +2,8 @@
   "network_node_url": "https://starknet-goerli.infura.io/v3/89d267bf72f346b78cf8a86415c6008a",
   "sources": [
     {
-      "contract": "0x01263ecbc05e28d1e99f531894838db10b90cfcdd39d020642da1747a733a37a",
-      "start": 873613,
+      "contract": "0x0759060edbce85ab703ecca246194f625387e44ef5b1b7b91e685e70b2a1c342",
+      "start": 889383,
       "deploy_fn": "loot-survivor",
       "events": [
         {
