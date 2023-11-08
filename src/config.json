@@ -1,74 +1,14 @@
 {
-  "network_node_url": "https://starknet-goerli.infura.io/v3/89d267bf72f346b78cf8a86415c6008a",
+  "network_node_url": "https://starknet-mainnet.infura.io/v3/fed2b947c42e4b51ab280d05d0cd030c",
   "sources": [
     {
-      "contract": "0x0759060edbce85ab703ecca246194f625387e44ef5b1b7b91e685e70b2a1c342",
-      "start": 889383,
+      "contract": "0x006388d8846a7a87f00b353112268f5e010335b2440175ba99717b6ff11545be",
+      "start": 368842,
       "deploy_fn": "loot-survivor",
       "events": [
         {
           "name": "StartGame",
           "fn": "startGame"
-        },
-        {
-          "name": "SlayedBeast",
-          "fn": "slayedBeast"
-        },
-        {
-          "name": "RewardDistribution",
-          "fn": "rewardDistribution"
-        },
-        {
-          "name": "AdventurerLeveledUp",
-          "fn": "adventurerLeveledUp"
-        },
-        {
-          "name": "UpgradesAvailable",
-          "fn": "upgradesAvailable"
-        },
-        {
-          "name": "DiscoveredHealth",
-          "fn": "discoveredHealth"
-        },
-        {
-          "name": "DiscoveredGold",
-          "fn": "discoveredGold"
-        },
-        {
-          "name": "DodgedObstacle",
-          "fn": "dodgedObstacle"
-        },
-        {
-          "name": "HitByObstacle",
-          "fn": "hitByObstacle"
-        },
-        {
-          "name": "AmbushedByBeast",
-          "fn": "ambushedByBeast"
-        },
-        {
-          "name": "DiscoveredBeast",
-          "fn": "discoveredBeast"
-        },
-        {
-          "name": "AttackedBeast",
-          "fn": "attackedBeast"
-        },
-        {
-          "name": "AttackedByBeast",
-          "fn": "attackedByBeast"
-        },
-        {
-          "name": "FleeFailed",
-          "fn": "fleeFailed"
-        },
-        {
-          "name": "FleeSucceeded",
-          "fn": "fleeSucceeded"
-        },
-        {
-          "name": "PurchasedItems",
-          "fn": "purchasedItems"
         }
       ]
     }
